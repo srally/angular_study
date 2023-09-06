@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, InjectionToken } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { first } from 'rxjs/operators';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, NgControl } from '@angular/forms';
 
 import { AuthenticationService } from '@_core/services';
 import { environment } from '@_environments/environment';
 
-
+// import { untilDestroyed } from 'ngx-take-until-destory';
 
 @Component({
   selector: 'app-login',
@@ -56,8 +56,12 @@ export class AppLoginComponent implements OnInit {
       if (this.loginForm.invalid) {
 /*
 *   show error message if username or password is empty
-*/
-        return;
+*/      const nullErrorMessage = "A field is empty!"
+        this.errMsgPwd = nullErrorMessage
+        this.errMsgUsername = nullErrorMessage
+        this.errMsg = true;
+        
+        //return;
       } 
       else{
         this.spinnerResourcesLoaded = true;

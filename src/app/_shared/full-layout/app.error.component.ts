@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './app.error.component.html',
 })
 export class AppErrorComponent {
-
+  
 }
