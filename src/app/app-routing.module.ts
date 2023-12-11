@@ -15,7 +15,7 @@ import { UserManagementComponent } from './users/user-management/user-management
 
 
 const routes: Routes = [{
-    path: '', component: AppMainComponent, canActivate: [AuthGuard], data: { allowedRoles: RoleGroup.Admins },
+    path: '', component: AppMainComponent, //canActivate: [AuthGuard], data: { allowedRoles: RoleGroup.Admins },
     children: [
       {path: '', component: AngularSiteComponent},
       {path: 'project', component: AngularSiteComponent},

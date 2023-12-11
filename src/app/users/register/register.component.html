@@ -5,6 +5,58 @@
                 <div class="col-12">
                     <h3>** Please update your profile **</h3>
                 </div>
+                <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+                    <div>
+                        <label for="ern">
+                            ERN
+                        </label>
+                        <input id="ern" type="text" formControlName="ern">
+                    </div>
+                    <div>
+                        <label for="first_name">
+                            First name*
+                        </label>
+                        <input id="first_name" type="text" formControlName="first_name">
+                    </div>
+                    <div>
+                        <label for="last_name">
+                            Last name*
+                        </label>
+                        <input id="last_name" type="text" formControlName="last_name">
+                    </div>
+                    <div>
+                        <label for="title">
+                            Title
+                        </label>
+                        <input id="title" type="text" formControlName="title">
+                    </div>
+                    <div>
+                        <label for="team">
+                            Team
+                        </label>
+                        <input id="team" type="text" formControlName="team">
+                    </div>
+                    <div>
+                        <label for="room">
+                            Room
+                        </label>
+                        <input id="room" type="text" formControlName="room">
+                    </div>
+                    <div>
+                        <label for="phone">
+                            Phone
+                        </label>
+                        <input id="phone" type="text" formControlName="phone">
+                    </div>
+                    <div>
+                        <label for="email">
+                            E-Mail
+                        </label>
+                        <input id="email" type="text" formControlName="email">
+                    </div>
+                    <button class="button" type="cancel">Cancel</button>
+                    <button class="button" type="submit">OK</button>
+                </form>
             </div>
         </div>
     </div>

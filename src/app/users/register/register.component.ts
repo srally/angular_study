@@ -1,6 +1,7 @@
 import { AuthenticationService } from '@_core/services';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -9,13 +10,27 @@ import { Subscription } from 'rxjs';
 })
 export class RegisterComponent implements OnInit, OnDestroy {
 
-  constructor(private authenticationService: AuthenticationService) {
+  registrationForm = this.formBuilder.group({
+    ern: '',
+    first_name: '',
+    last_name: '',
+    title: '',
+    team: '',
+    room: '',
+    phone: '',
+    email: ''
+  })
 
+  constructor(private authenticationService: AuthenticationService, private formBuilder: FormBuilder) {
+  
   }
 
   ngOnDestroy(): void {
   }
   ngOnInit(): void {
+  }
+  onSubmit(): void {
+    
   }
 
 }
