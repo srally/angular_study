@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup, Validators, NgControl } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit, OnDestroy {
 
+  spinnerResourcesLoaded:boolean = false;
   submitted: boolean = false;
   registrationForm: FormGroup
   ern: string
@@ -64,33 +65,9 @@ export class RegisterComponent implements OnInit, OnDestroy {
       this.errMsgEMail = duplicateErrorMessage
       this.errMsg = true
     } 
-    // else{
-    //   this.spinnerResourcesLoaded = true;
-    //   this.authenticationService.login(this.username, this.password)
-    //       .pipe(first())
-    //       .subscribe(
-    //           data => {                
-    //             setTimeout(() => {
-    //               this.spinnerResourcesLoaded = false;
-    //               this.router.navigate(['/']);
-    //             }, 2000);
-    //           },
-    //           error => {
-    //             this.ShowConsoleMessages && console.log('%cLoginComponent.onSubmit.ERR','background-color:red;color:white;', error);
-    //             const defaultErrorMessage = "Login Error !!!";
-                
-    //             if(error instanceof HttpErrorResponse) {
-    //               this.ShowConsoleMessages && console.log('%cHttpErrorResponse','background-color:red;color:white;',error);
-    //               this.errMsgPwd = error.error.message ? error.error.message : (error.statusText ? error.statusText : defaultErrorMessage);
-    //             } else {
-    //               this.ShowConsoleMessages && console.log('%cOther','background-color:red;color:white;',error);
-    //               this.errMsgPwd = error.error.message ? error.error.message : (error.statusText ? error.statusText : defaultErrorMessage);
-    //             }
-    //             this.errMsgUsername = defaultErrorMessage;
-    //             this.errMsg = true;
-    //             this.spinnerResourcesLoaded = false;
-    //           });
-    // }      
+    else{
+      this.spinnerResourcesLoaded = true;
+    }      
   }
 
 }
