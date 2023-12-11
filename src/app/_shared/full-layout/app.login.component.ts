@@ -17,7 +17,7 @@ import { environment } from '@_environments/environment';
 export class AppLoginComponent implements OnInit {
     ShowConsoleMessages:boolean = environment.showConsoleMessages;
     txt_loginpage: string = environment.txt_loginpage;
-    loginBGColor:string = environment.loginBGColor || 'white';
+    loginBGColor:string = environment.loginBGColor || 'pink'; //from 'white'
     spinnerResourcesLoaded:boolean = false;    
     submitted: boolean = false;
     loginForm: FormGroup;
